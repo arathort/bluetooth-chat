@@ -29,8 +29,16 @@ fun DeviceScreen(
     Column(
         modifier = Modifier.fillMaxSize()
     ) {
+        BluetoothDeviceList(
+            pairedDevices = state.pairedDevices,
+            scannedDevices = state.scannedDevices,
+            onClick = {},
+            modifier = Modifier
+                .fillMaxWidth()
+                .weight(1f)
+        )
         Row(
-            modifier = Modifier.fillMaxWidth(),
+            modifier = Modifier.fillMaxWidth().padding(bottom = 24.dp),
             horizontalArrangement = Arrangement.SpaceAround
         ) {
             Button(
